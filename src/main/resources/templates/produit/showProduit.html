@@ -183,7 +183,7 @@ $(document).ready(function(){
                     <div class="col-sm-8"><h2>Liste des <b>Produits</b></h2></div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <a href="/produit"><input type="button" value="Ajouter" ></a>
+                            <a href="/produit/create"><input type="button" value="Ajouter" ></a>
                         </div>
                     </div>
                 </div>
@@ -203,14 +203,13 @@ $(document).ready(function(){
                 </tr>
                 </thead>
                 <tbody>
-                <tr  th:each = "produit:${ListProduit}">
+                <tr  th:each = "produit:${listProduit}">
                     <td  scope="row" th:text = "${produit.category.designation}"></td>
                     <td  scope="row" th:text = "${produit.id}"></td>
                     <td scope="row" th:text = "${produit.libelle}"></td>
                     <td  scope="row" th:text = "${produit.prix}"></td>
-                    <td scope="row" th:text = "${produit.qteStock}"></td>
                     <td  scope="row" th:text = "${produit.qteSeuil}"></td>
-                    <td scope="row" th:text = "${produit.dateCreation}"></td>
+
 
                     <td>
                         <a class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -224,7 +223,7 @@ $(document).ready(function(){
 
         </div>
     </div>
-    <div class="pen-footer"><a href="/Listcategory" ><i class="material-icons">arrow_backward</i>Aller à Categories</a></div>
+    <div class="pen-footer"><a href="/category/afficher" ><i class="material-icons">arrow_backward</i>Aller à Categories</a></div>
 </div>
 </body>
 </html>

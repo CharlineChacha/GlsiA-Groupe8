@@ -40,7 +40,7 @@ public class CategoryService {
         return  category;
     }
 
-    //supprimer un produit
+    //supprimer un categorie
     public void deleteCategory(int id){
         if (selecteOneCategory(id) != null) {
             categoryRepository.deleteById(id);

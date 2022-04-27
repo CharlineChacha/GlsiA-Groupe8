@@ -51,7 +51,7 @@ body {
     font-size: 22px;
 }
 .search-box {
-    position: relative;        
+    position: relative;
     float: right;
 }
 .search-box input {
@@ -104,7 +104,7 @@ table.table td a.delete {
 }
 table.table td i {
     font-size: 19px;
-}    
+}
 .pagination {
     float: right;
     margin: 0 0 5px;
@@ -123,11 +123,11 @@ table.table td i {
 }
 .pagination li a:hover {
     color: #666;
-}	
+}
 .pagination li.active a {
     background: #03A9F4;
 }
-.pagination li.active a:hover {        
+.pagination li.active a:hover {
     background: #0397d6;
 }
 .pagination li.disabled i {
@@ -179,11 +179,8 @@ $(document).ready(function(){
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2>Liste des<b>Categories</b></h2></div>
+                    <div class="col-sm-8"><h2>Liste des <b>Clients</b></h2></div>
                     <div class="col-sm-4">
-                        <div class="form-group">
-                          <a href="/category/formCategory"><input type="button" value="Ajouter" ></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -191,20 +188,24 @@ $(document).ready(function(){
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nom de la Categorie<i class="fa fa-sort"></i></th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Nom <i class="fa fa-sort"></i></th>
+                    <th scope="col">Prenoms<i class="fa fa-sort"></i></th>
+                    <th scope="col">Adresse<i class="fa fa-sort"></i></th>
+                    <th scope="col">Telephone<i class="fa fa-sort"></i></th>
 
                 </tr>
                 </thead>
                 <tbody>
-                <tr  th:each = "category:${ListCategory}">
-                    <td  scope="row" th:text = "${category.id}"></td>
-                    <td th:text = "${category.designation}"></td>
+                <tr  th:each = "client:${ListClient}">
+                    <td  scope="row" th:text = "${client.id}"></td>
+                    <td th:text = "${client.nom}"></td>
+                    <td th:text = "${client.prenom}"></td>
+                    <td th:text = "${client.adresse}"></td>
+                    <td th:text = "${client.telephone}"></td>
 
                     <td>
                         <a class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                        <a  th:href="@{/category/edit/{id}(id=${category.id})}"   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                        <a th:href="@{/category/delete/{id}(id=${category.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        <a th:href="@{/client/delete/{id}(id=${client.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                     </td>
                 </tr>
 
@@ -213,7 +214,6 @@ $(document).ready(function(){
 
         </div>
     </div>
-    <div class="pen-footer"><a href="/produit/show" >Aller à Produits<i class="material-icons">arrow_forward</i></a></div>
 
 </div>
 </body>

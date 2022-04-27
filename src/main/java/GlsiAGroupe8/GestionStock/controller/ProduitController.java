@@ -1,6 +1,7 @@
 package GlsiAGroupe8.GestionStock.controller;
 
 
+import GlsiAGroupe8.GestionStock.models.Category;
 import GlsiAGroupe8.GestionStock.models.Produit;
 import GlsiAGroupe8.GestionStock.service.CategoryService;
 import GlsiAGroupe8.GestionStock.service.ProduitService;
@@ -23,20 +24,21 @@ public class ProduitController {
     public String afficherProduit(Model model)
     {
         model.addAttribute("listProduit", produitService.showAllProduit());
-        return "produit/showProduct";
+        return "produit/showProduit";
     }
 
     @GetMapping("/create")
     public String AfficherFormulaire(Model model)
     {
 
-        model.addAttribute("ListCategorie", categoryService.showAllCategory());
+        model.addAttribute("ListCategory", categoryService.showAllCategory());
         return "produit/formProduit";
     }
 
     @PostMapping("/save")
-    public String save(Produit produit)
+    public String save(Produit produit, Model model, @ModelAttribute("designation") Category category)
     {
+        produit.setCategory(category);
         produit.setQteStok(0);
         produit.setDateCreation(LocalDate.now());
 
@@ -45,11 +47,11 @@ public class ProduitController {
     }
 
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/{id}/edit")
     public String formEditProduit(@PathVariable("id") int id, Model model)
     {
         model.addAttribute("unProduit", produitService.selectedProduit(id));
-        model.addAttribute("ListCategorie", categoryService.showAllCategory());
+        model.addAttribute("ListCategory", categoryService.showAllCategory());
         return "produit/formEditProduit";
     }
 
