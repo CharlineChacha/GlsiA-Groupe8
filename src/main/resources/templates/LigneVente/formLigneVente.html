@@ -333,18 +333,18 @@ body {
         <div class="form-content">
             <form th:action="@{/ligneVente/save}" method="post">
                 <div class="form-group">
-                    <label for="ProduitId" class="form-label">Produit</label>
-                    <select name="ProduitId" id="ProduitId" required="required">
-                        <option th:each="produit:${ListProduit}"
+                    <label for="libelle" class="form-label">Produit</label>
+                    <select name="libelle" id="libelle" required="required">
+                        <option th:each="produit:${listProduit}"
                                 th:value="${produit.id}"
                                 th:text="${produit.libelle }" ></option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="VenteId" class="form-label">Produit</label>
+                    <label for="VenteId" class="form-label">Vente</label>
                     <select name="VenteId" id="VenteId" required="required">
-                        <option th:each="vente:${ListVente}"
+                        <option th:each="vente:${listVente}"
                                 th:value="${vente.id}"
                                 th:text="${vente.codeVente}" ></option>
                     </select>
@@ -356,7 +356,7 @@ body {
                 </div>
                  <div class="form-group">
                      <label for="qteligne">Quantité</label>
-                     <input id="qteligne" type="date" name="qteligne" required="required" />
+                     <input id="qteligne" type="number" name="qteligne" required="required" />
                  </div>
 
 

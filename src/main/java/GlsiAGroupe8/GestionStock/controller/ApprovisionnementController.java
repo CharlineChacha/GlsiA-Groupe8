@@ -31,7 +31,7 @@ public class ApprovisionnementController {
         public String AfficherFormulaireApp(Model model)
         {
 
-            model.addAttribute("ListProduit", approvisionnementService.showAllApprovisionnement());
+            model.addAttribute("listProduit", produitService.showAllProduit());
             return "approvisionnement/formApprovisionnement";
         }
 
@@ -49,7 +49,7 @@ public class ApprovisionnementController {
         public String formEditApprovisionnement(@PathVariable("id") int id, Model model)
         {
             model.addAttribute("unApprovisionnement", approvisionnementService.selectedApprovisionnement(id));
-            model.addAttribute("ListProduit", produitService.showAllProduit());
+            model.addAttribute("listProduit", produitService.showAllProduit());
             return "approvisionnement/formEditApprovisionnement";
         }
 

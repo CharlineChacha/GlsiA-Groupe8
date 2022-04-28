@@ -33,7 +33,7 @@ public class LigneVenteController {
     {
 
         model.addAttribute("ListLigneVente", ligneVenteService.showAllLigneVente());
-        return "ligneVente/formLigneVente";
+        return "LigneVente/formLigneVente";
     }
 
     @PostMapping("/save")
@@ -49,8 +49,8 @@ public class LigneVenteController {
     public String formEditLigneVente(@PathVariable("id") int id, Model model)
     {
         model.addAttribute("uneLigneVente", ligneVenteService.selectedLigneVente(id));
-        model.addAttribute("ListProduit", produitService.showAllProduit());
-        model.addAttribute("ListVente", venteService.showAllVente());
+        model.addAttribute("listProduit", produitService.showAllProduit());
+        model.addAttribute("listVente", venteService.showAllVente());
         return "ligneVente/formEditLigneVente";
     }
 
