@@ -181,6 +181,9 @@
                 <div class="row">
                     <div class="col-sm-8"><h2>Liste des <b>Approvisionnements</b></h2></div>
                     <div class="col-sm-4">
+                        <div class="form-group">
+                            <a href="/approvisionnement/create"><input type="button" value="Ajouter" ></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -196,7 +199,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr  th:each = "approvisionnement:${ListApprovisionnement}">
+                <tr  th:each = "approvisionnement:${listApprovisionnement}">
                     <td  scope="row" th:text = "${approvisionnement.id}"></td>
                     <td   th:text = "${approvisionnement.produit.libelle}"></td>
                     <td th:text = "${approvisionnement.quantite}"></td>

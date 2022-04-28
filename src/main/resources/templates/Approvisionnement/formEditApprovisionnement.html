@@ -336,7 +336,7 @@
                     <label for="ProduitId" class="form-label">Produit</label>
                     <select name="ProduitId" id="ProduitId" required="required">
                         <option value="">Selectionner un produit</option>
-                        <option th:each="produit:${ListProduit}"
+                        <option th:each="produit:${listProduit}"
                                 th:value="${produit.id}"
                                 th:text="${produit.libelle}"></option>
                     </select>

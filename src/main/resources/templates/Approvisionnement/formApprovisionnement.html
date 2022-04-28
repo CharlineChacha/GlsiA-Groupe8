@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
 
@@ -337,7 +336,7 @@
                     <label for="ProduitId" class="form-label">Produit</label>
                     <select name="ProduitId" id="ProduitId" required="required">
                         <option value="">Selectionner un produit</option>
-                        <option th:each="produit:${ListProduit}"
+                        <option th:each="produit:${listProduit}"
                                 th:value="${produit.id}"
                                 th:text="${produit.libelle}"></option>
                     </select>
@@ -349,7 +348,7 @@
 
                 <div class="form-group">
                     <label for="type">Type </label>
-                    <input id="type" type="number" name="type" required="required"/>
+                    <input id="type" type="text" name="type" required="required"/>
                 </div>
 
 
