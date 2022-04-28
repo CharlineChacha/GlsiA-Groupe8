@@ -39,8 +39,6 @@ public class LigneVenteController {
     @PostMapping("/save")
     public String save(LigneVente ligneVente)
     {
-        ligneVente.setQteligne(0);
-        ligneVente.setPrixUnitaire(0);
 
         ligneVenteService.saveLigneVente(ligneVente);
         return "redirect:/ligneVente/show";

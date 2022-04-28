@@ -1,16 +1,16 @@
 package GlsiAGroupe8.GestionStock.models;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name="Vente")
+@Table(name="vente")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,11 +20,14 @@ public class Vente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String codeVente;
-    private LocalDate dateVente;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
+    @NotNull
     @ManyToOne()
-    @JoinColumn(name = "ClientId", insertable = false ,updatable = false)
+    @JoinColumn(name = "ClientId", nullable = false, insertable = false ,updatable = false)
     private Client client;
     private int ClientId;
+
+
 
 }

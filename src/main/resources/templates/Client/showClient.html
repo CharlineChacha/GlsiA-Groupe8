@@ -181,6 +181,9 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-sm-8"><h2>Liste des <b>Clients</b></h2></div>
                     <div class="col-sm-4">
+                      <div class="form-group">
+                            <a href="/client/form"><input type="button" value="Ajouter" ></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -204,7 +207,8 @@ $(document).ready(function(){
                     <td th:text = "${client.telephone}"></td>
 
                     <td>
-                        <a class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                        <a class="vente"  th:href="@{/vente/create/{id}(id=${client.id})}"  title="Vente"  data-toggle="tooltip">Enregistrer une vente</a>
+                        <a  th:href="@{/client/edit/{id}(id=${client.id})}"   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                         <a th:href="@{/client/delete/{id}(id=${client.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                     </td>
                 </tr>

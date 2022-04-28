@@ -21,4 +21,11 @@ public class SalesController {
         model.addAttribute("sales", salesService.showAll());
         return "sales/template/index";
     }
+
+    @GetMapping("/showProduct")
+    public String afficherProduct(Model model)
+    {
+        model.addAttribute("sales", salesService.showAll());
+        return "sales/template/product-listing";
+    }
 }

@@ -1,6 +1,7 @@
 package GlsiAGroupe8.GestionStock.controller;
 
 
+import GlsiAGroupe8.GestionStock.models.Client;
 import GlsiAGroupe8.GestionStock.models.Vente;
 import GlsiAGroupe8.GestionStock.service.ClientService;
 import GlsiAGroupe8.GestionStock.service.VenteService;
@@ -9,7 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Controller
 @RequestMapping("/vente")
 public class VenteController {
@@ -30,29 +32,30 @@ public class VenteController {
     public String AfficherFormulaireVente(Model model)
     {
 
-        model.addAttribute("ListVente", venteService.showAllVente());
+
+        model.addAttribute("ListClient", clientService.showAllClient());
         return "vente/formVente";
     }
 
     @PostMapping("/save")
-    public String save(Vente vente)
+    public String save( Vente vente, Model model)
     {
-        vente.setDateVente(LocalDate.now());
-
+        vente.setCreatedAt(LocalDateTime.now());
         venteService.saveVente(vente);
         return "redirect:/vente/show";
     }
 
 
     @GetMapping("/edit/{id}")
-    public String formEditVente(@PathVariable("id") int id, Model model)
+    public String formEditVente(@PathVariable("id") int id,Vente vente, Model model)
     {
+        vente.setCreatedAt(LocalDateTime.now());
         model.addAttribute("unProduit", venteService.selectedVente(id));
-        model.addAttribute("ListCategory", clientService.showAllClient());
+        model.addAttribute("ListClient", clientService.showAllClient());
         return "vente/formEditVente";
     }
 
-    @PostMapping("/edit")
+    @PostMapping("/edit/{id}")
     public String editVente(@ModelAttribute("vente") Vente vente){
         venteService.saveVente(vente);
         return "redirect:/vente/show";

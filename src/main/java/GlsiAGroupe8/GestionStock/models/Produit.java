@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -18,13 +19,13 @@ public class Produit {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String libelle;
-    private int qteStok;
+    private int qteStock;
     private int qteSeuil;
     private double prix;
-    private LocalDate dateCreation;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @ManyToOne()
-    @JoinColumn(name = "categoryId", insertable = false ,updatable = false)
+    @JoinColumn(name = "categoryId", updatable = false, insertable = false)
     private Category Category;
     private int categoryId;
 

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -19,7 +20,7 @@ public class Approvisionnement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int quantite;
-    private LocalDate dateStock;
+    private LocalDateTime createdAt = LocalDateTime.now();
     private Enum type;
 
     @ManyToOne()

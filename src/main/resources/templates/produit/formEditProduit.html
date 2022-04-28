@@ -331,12 +331,12 @@ body {
             <h1>Modifier un produit</h1>
         </div>
         <div class="form-content">
-            <form th:action="@{produit/edit}" th:object="${ListProduit}" method="post">
+            <form th:action="@{/produit/edit}" th:object="${ListProduit}" method="post">
 
 
                 <div class="form-group">
-                    <label for="categoryInput">Categorie</label>
-                    <select name="categoryInput" id="categoryInput" required="required">
+                    <label for="categoryId">Categorie</label>
+                    <select name="categoryId" id="categoryId" required="required">
                         <option value="">Selectionner une categorie</option>
                         <option th:each="category:${ListCategory}"
                                 th:value="${category.id}"
@@ -353,17 +353,10 @@ body {
                     <input id="prix" type="text" name="prix" required="required"/>
                 </div>
                 <div class="form-group">
-                    <label for="qteStock">Quantité du stock</label>
-                    <input type="number" id="qteStock" name="qteStock" required="required" />
-                </div>
-                <div class="form-group">
                     <label for="qteSeuil">Quantité seuil</label>
                     <input id="qteSeuil" type="number" name="qteSeuil" required="required"/>
                 </div>
-                <div class="form-group">
-                    <label for="dateCreation">Date de creation</label>
-                    <input id="dateCreation" type="datetime-local" name="dateCreation" required="required"/>
-                </div>
+
 
                 <div class="form-group">
                     <button type="submit">Valider</button>

@@ -23,7 +23,7 @@ public class ClientController {
         return "client/showClient";
     }
 
-    @GetMapping("/formClient")
+    @GetMapping("/form")
     public String formClient()
     {
         return "client/formClient";

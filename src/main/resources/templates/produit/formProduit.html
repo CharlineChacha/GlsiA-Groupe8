@@ -333,8 +333,8 @@ body {
         <div class="form-content">
             <form th:action="@{/produit/save}" method="post">
                 <div class="form-group">
-                    <label for="designation" class="form-label">Categorie</label>
-                    <select name="designation" id="designation" required="required">
+                    <label for="CategoryId" class="form-label">Categorie</label>
+                    <select name="CategoryId" id="CategoryId" required="required">
                         <option value="">Selectionner une categorie</option>
                         <option th:each="category:${ListCategory}"
                                 th:value="${category.id}"

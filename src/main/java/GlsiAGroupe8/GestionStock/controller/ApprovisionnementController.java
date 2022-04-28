@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping("/approvisionnement")
@@ -37,8 +38,7 @@ public class ApprovisionnementController {
         @PostMapping("/save")
         public String save(Approvisionnement approvisionnement)
         {
-            approvisionnement.setQuantite(0);
-            approvisionnement.setDateStock(LocalDate.now());
+            approvisionnement.setCreatedAt(LocalDateTime.now());
 
             approvisionnementService.saveApprovisionnement(approvisionnement);
             return "redirect:/approvisionnement/show";

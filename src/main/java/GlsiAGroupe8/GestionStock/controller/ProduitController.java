@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping("/produit")
@@ -36,20 +37,20 @@ public class ProduitController {
     }
 
     @PostMapping("/save")
-    public String save(Produit produit, Model model, @ModelAttribute("designation") Category category)
+    public String save(Produit produit)
     {
-        produit.setCategory(category);
-        produit.setQteStok(0);
-        produit.setDateCreation(LocalDate.now());
+        produit.setQteStock(0);
+        produit.setCreatedAt(LocalDateTime.now());
 
         produitService.saveProduit(produit);
         return "redirect:/produit/show";
     }
 
 
-    @GetMapping("/{id}/edit")
+    @GetMapping("/edit/{id}")
     public String formEditProduit(@PathVariable("id") int id, Model model)
     {
+        //produit.setCreatedAt(LocalDateTime.now());
         model.addAttribute("unProduit", produitService.selectedProduit(id));
         model.addAttribute("ListCategory", categoryService.showAllCategory());
         return "produit/formEditProduit";
