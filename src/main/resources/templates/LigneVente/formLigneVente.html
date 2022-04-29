@@ -328,13 +328,13 @@ body {
     <div class="form-toggle"></div>
     <div class="form-panel one">
         <div class="form-header">
-            <h1>Effectuer une vente</h1>
+            <h1>Enregistrer une ligne </h1>
         </div>
         <div class="form-content">
             <form th:action="@{/ligneVente/save}" method="post">
                 <div class="form-group">
-                    <label for="libelle" class="form-label">Produit</label>
-                    <select name="libelle" id="libelle" required="required">
+                    <label for="ProduitId" class="form-label">Produit</label>
+                    <select name="ProduitId" id="ProduitId" required="required">
                         <option th:each="produit:${listProduit}"
                                 th:value="${produit.id}"
                                 th:text="${produit.libelle }" ></option>

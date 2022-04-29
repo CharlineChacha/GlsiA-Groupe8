@@ -23,8 +23,7 @@ public class LigneVenteController {
     @GetMapping("/show")
     public String afficherLigneVente(Model model)
     {
-        model.addAttribute("listVente", venteService.showAllVente());
-        model.addAttribute("listProduit", produitService.showAllProduit());
+        model.addAttribute("listLigneVente", ligneVenteService.showAllLigneVente());
         return "LigneVente/showLigneVente";
     }
 
@@ -32,12 +31,13 @@ public class LigneVenteController {
     public String AfficherFormulaireLigne(Model model)
     {
 
-        model.addAttribute("ListLigneVente", ligneVenteService.showAllLigneVente());
+            model.addAttribute("listVente", venteService.showAllVente());
+            model.addAttribute("listProduit", produitService.showAllProduit());
         return "LigneVente/formLigneVente";
     }
 
     @PostMapping("/save")
-    public String save(LigneVente ligneVente)
+    public String saveLigneVente(LigneVente ligneVente)
     {
 
         ligneVenteService.saveLigneVente(ligneVente);

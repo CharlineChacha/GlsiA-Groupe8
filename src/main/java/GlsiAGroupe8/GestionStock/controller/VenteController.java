@@ -25,15 +25,16 @@ public class VenteController {
     public String afficherVente(Model model)
     {
         model.addAttribute("listVente", venteService.showAllVente());
+        model.addAttribute("listClient", clientService.showAllClient());
         return "vente/showVente";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/create/{id}")
     public String AfficherFormulaireVente(Model model)
     {
 
 
-        model.addAttribute("ListClient", clientService.showAllClient());
+        model.addAttribute("listClient", clientService.showAllClient());
         return "vente/formVente";
     }
 
@@ -51,7 +52,7 @@ public class VenteController {
     {
         vente.setCreatedAt(LocalDateTime.now());
         model.addAttribute("unProduit", venteService.selectedVente(id));
-        model.addAttribute("ListClient", clientService.showAllClient());
+        model.addAttribute("listClient" , clientService.showAllClient());
         return "vente/formEditVente";
     }
 

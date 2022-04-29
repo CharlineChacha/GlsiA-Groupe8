@@ -204,13 +204,13 @@ $(document).ready(function(){
                 <tr  th:each = "ligneVente:${listLigneVente}" >
                     <td  scope="row" th:text = "${ligneVente.id}"></td>
                     <td  scope="row" th:text = "${ligneVente.vente.codeVente}"></td>
-                    <td  scope="row" th:text = "${ligneVente.vente.libelle}"></td>
+                    <td  scope="row" th:text = "${ligneVente.produit.libelle}"></td>
                     <td  scope="row" th:text = "${ligneVente.prixUnitaire}"></td>
                     <td  scope="row" th:text = "${ligneVente.qteligne}"></td>
 
 
                     <td>
-                        <a class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+
                         <a  th:href="@{/ligneVente/edit/{id}(id=${ligneVente.id})}"   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                         <a th:href="@{/ligneVente/delete/{id}(id=${ligneVente.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                     </td>

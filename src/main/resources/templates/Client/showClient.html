@@ -207,9 +207,9 @@ $(document).ready(function(){
                     <td th:text = "${client.telephone}"></td>
 
                     <td>
-                        <a class="vente"  th:href="@{/vente/create/{id}(id=${client.id})}"  title="Vente"  data-toggle="tooltip">Enregistrer une vente</a>
                         <a  th:href="@{/client/edit/{id}(id=${client.id})}"   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                         <a th:href="@{/client/delete/{id}(id=${client.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        <a th:href="@{/vente/create/{id}(id=${client.id})}" class="vente" title="Vente"  data-toggle="tooltip"><i class="material-icons">&#xe85d; </i> </a>
                     </td>
                 </tr>
 

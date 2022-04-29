@@ -335,19 +335,16 @@ body {
                 <div class="form-group">
                     <label for="ClientId" class="form-label">Client</label>
                     <select name="ClientId" id="ClientId" required="required">
-                        <option th:each="client:${ListClient}"
+                        <option th:each="client:${listClient}"
                                 th:value="${client.id}"
-                                th:text="${client.nom }" ></option>
+                                th:text="${client.nom }"></option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="codeVente">Code Vente</label>
                     <input id="codeVente" type="text" name="codeVente" required="required"/>
                 </div>
-               <!-- <div class="form-group">
-                    <label for="dateVente">Date Vente</label>
-                    <input id="dateVente" type="date" name="dateVente" />
-                </div> -->
+
 
 
                 <div class="form-group">

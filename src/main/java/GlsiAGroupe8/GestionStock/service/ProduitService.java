@@ -19,6 +19,8 @@ public class ProduitService {
         produitRepository.save(produit);
     }
 
+    public Long nbreProduit(Produit produit){return produitRepository.count();}
+
     //Afficher les produits
     public List<Produit> showAllProduit()
     {

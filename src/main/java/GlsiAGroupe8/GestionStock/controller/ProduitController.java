@@ -1,7 +1,6 @@
 package GlsiAGroupe8.GestionStock.controller;
 
 
-import GlsiAGroupe8.GestionStock.models.Category;
 import GlsiAGroupe8.GestionStock.models.Produit;
 import GlsiAGroupe8.GestionStock.service.CategoryService;
 import GlsiAGroupe8.GestionStock.service.ProduitService;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Controller
@@ -26,6 +24,14 @@ public class ProduitController {
     {
         model.addAttribute("listProduit", produitService.showAllProduit());
         return "produit/showProduit";
+    }
+
+    @GetMapping()
+            public String nbreProduit (Model model, Produit produit)
+    {
+        model.addAttribute("nbreProduit", produitService.nbreProduit(produit));
+           return "$nbre";
+
     }
 
     @GetMapping("/create")
@@ -45,6 +51,8 @@ public class ProduitController {
         produitService.saveProduit(produit);
         return "redirect:/produit/show";
     }
+
+
 
 
     @GetMapping("/edit/{id}")

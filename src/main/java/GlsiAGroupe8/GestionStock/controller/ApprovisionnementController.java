@@ -36,7 +36,7 @@ public class ApprovisionnementController {
         }
 
         @PostMapping("/save")
-        public String save(Approvisionnement approvisionnement)
+        public String saveApprovisionnement(Approvisionnement approvisionnement)
         {
             approvisionnement.setCreatedAt(LocalDateTime.now());
 
