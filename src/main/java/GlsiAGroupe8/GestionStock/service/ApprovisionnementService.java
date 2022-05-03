@@ -2,6 +2,7 @@ package GlsiAGroupe8.GestionStock.service;
 
 import GlsiAGroupe8.GestionStock.models.Approvisionnement;
 import GlsiAGroupe8.GestionStock.repository.ApprovisionnementRepository;
+import GlsiAGroupe8.GestionStock.repository.ProduitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,22 +28,33 @@ public class ApprovisionnementService {
         return approvisionnementRepository.findAll();
     }
 
-    public Approvisionnement selectedApprovisionnement(int id)
-    {
-        Optional<Approvisionnement> optional = approvisionnementRepository.findById(id);
-        Approvisionnement approvisionnement = null;
-        if(optional.isPresent())
-        {
-            approvisionnement= optional.get();
-        }else
-        {
-            throw new RuntimeException("id introuvable");
+    public Approvisionnement get(int id){
+        Optional<Approvisionnement> approvisionnement_optional ;
+        approvisionnement_optional = approvisionnementRepository.findById(id);
+
+        if(approvisionnement_optional.isPresent()){
+            Approvisionnement approvisionnement;
+            approvisionnement = approvisionnement_optional.get();
+            return approvisionnement;
         }
-        return  approvisionnement;
+        throw new RuntimeException("Id introuvable");
     }
 
+    public Approvisionnement select(int id){
+        Optional<Approvisionnement> approvisionnement_optional ;
+        approvisionnement_optional = approvisionnementRepository.findById(id);
+
+        if(approvisionnement_optional.isPresent()){
+            Approvisionnement approvisionnement;
+            approvisionnement = approvisionnement_optional.get();
+            return approvisionnement;
+        }
+        throw new RuntimeException("Id introuvable");
+    }
+
+
     public void deleteApprovisionnement(int id){
-        if (selectedApprovisionnement(id) != null) {
+        if (get(id) != null) {
             approvisionnementRepository.deleteById(id);
         }
     }

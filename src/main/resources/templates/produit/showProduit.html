@@ -25,6 +25,337 @@
     <!-- (Optional) Latest compiled and minified JavaScript translation files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
     <style type="text/css">
+  @charset "UTF-8";
+.navigation {
+  height: 70px;
+  background: #262626;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.brand a,
+.brand a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #262626;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  background: #2581DC;
+  color: #ffffff;
+}
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+nav ul li ul li {
+  min-width: 190px;
+}
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #262626;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #ffffff;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+article {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+//Card css
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+}
+.l-bg-cherry {
+    background: linear-gradient(to right, #493240, #f09) !important;
+    color: #fff;
+}
+
+.l-bg-blue-dark {
+    background: linear-gradient(to right, #373b44, #4286f4) !important;
+    color: #fff;
+}
+
+.l-bg-green-dark {
+    background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+    color: #fff;
+}
+
+.l-bg-orange-dark {
+    background: linear-gradient(to right, #a86008, #ffba56) !important;
+    color: #fff;
+}
+
+.card .card-statistic-3 .card-icon-large .fas, .card .card-statistic-3 .card-icon-large .far, .card .card-statistic-3 .card-icon-large .fab, .card .card-statistic-3 .card-icon-large .fal {
+    font-size: 110px;
+}
+
+.card .card-statistic-3 .card-icon {
+    text-align: center;
+    line-height: 50px;
+    margin-left: 15px;
+    color: #000;
+    position: absolute;
+    right: -5px;
+    top: 20px;
+    opacity: 0.1;
+}
+
+.l-bg-cyan {
+    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+    color: #fff;
+}
+
+.l-bg-green {
+    background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+    color: #fff;
+}
+
+.l-bg-orange {
+    background: linear-gradient(to right, #f9900e, #ffba56) !important;
+    color: #fff;
+}
+
+.l-bg-cyan {
+    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+    color: #fff;
+}
+
+//charts
+
+
+</style>
+    <script type="text/javascript">
+     (function ($) {
+  // Begin jQuery
+  $(function () {
+    // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $("nav ul li a:not(:only-child)").click(function (e) {
+      $(this).siblings(".nav-dropdown").toggle();
+      // Close one dropdown when selecting another
+      $(".nav-dropdown").not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $("html").click(function () {
+      $(".nav-dropdown").hide();
+    });
+    // Toggle open and close nav styles on click
+    $("#nav-toggle").click(function () {
+      $("nav ul").slideToggle();
+    });
+    // Hamburger to X toggle
+    $("#nav-toggle").on("click", function () {
+      this.classList.toggle("active");
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+
+//charts
+
+//bar
+var ctxB = document.getElementById("barChart").getContext('2d');
+var myBarChart = new Chart(ctxB, {
+  type: 'bar',
+  data: {
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+    </script>
+
+</head>
+<body>
+<section class="navigation">
+    <div class="nav-container">
+        <div class="brand">
+            <a href="/">LeGerant</a>
+        </div>
+        <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+                <li>
+                    <a href="/category/afficher">Catégories</a>
+                </li>
+                <li>
+                    <a href="/produit/show">Produits</a>
+                </li>
+                <li>
+                    <a href="/vente/show">Ventes</a>
+                </li>
+                <li>
+                    <a href="/ligneVente/show">Ligne Ventes</a>
+                </li>
+                <li>
+                    <a href="/approvisionnement/show">Approvisionnements</a>
+                </li>
+                <li>
+                    <a href="/client/show">Clients</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</section> <br/> <br/>
+</body>
+    <style type="text/css">
 body {
     color: #566787;
     background: #f5f5f5;
@@ -502,6 +833,12 @@ table.table td i {
 }
 
 
+body {
+  min-height: 100vh;
+
+  background-color:  #FFFFFF;
+  background-image: linear-gradient(147deg, #FFFFFF 0%, #FFFFFF 100%);
+}
 
 </style>
     <script type="text/javascript">
@@ -2930,46 +3267,14 @@ $(document).ready(function(){
 
 
 
-
+$(function() {
+  $(document).ready(function() {
+    $('#example').DataTable();
+  });
+});
 </script>
-</head>
 <body>
-<!-- <table id="example" class="display" style="width:100%">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Categories<i class="fa fa-sort"></i></th>
-        <th scope="col">Produits<i class="fa fa-sort"></i></th>
-        <th scope="col">Prix<i class="fa fa-sort"></i></th>
-        <th scope="col">Quantité du stock<i class="fa fa-sort"></i></th>
-        <th scope="col">Quantité seuil<i class="fa fa-sort"></i></th>
-        <th scope="col">Date de creation<i class="fa fa-sort"></i></th>
-        <th scope="col">Actions</th>
-
-    </tr>
-    </thead>
-    <tbody>
-    <tr  th:each = "produit:${listProduit}">
-        <td  scope="row" th:text = "${produit.id}"></td>
-        <td  scope="row" th:text = "${produit.category.designation}"></td>
-        <td scope="row" th:text = "${produit.libelle}"></td>
-        <td  scope="row" th:text = "${produit.prix}"></td>
-        <td  scope="row" th:text = "${produit.qteStock}"></td>
-        <td  scope="row" th:text = "${produit.qteSeuil}"></td>
-        <td  scope="row" th:text = "${produit.createdAt}"></td>
-
-        <td>
-
-            <a  th:href="@{/produit/edit/{id}(id=${produit.id})}"   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-            <a th:href="@{/produit/delete/{id}(id=${produit.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-        </td>
-    </tr>
-
-
-
-    </tbody>
-</table>  -->
-
+ <!--
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -3011,6 +3316,7 @@ $(document).ready(function(){
                     <td>
                         <a  th:href="@{/produit/edit/{id}(id=${produit.id})}"   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                         <a th:href="@{/produit/delete/{id}(id=${produit.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        <a  th:href="@{/produit/edit/{id}(id=${produit.id})}"   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                     </td>
                 </tr>
 
@@ -3020,24 +3326,65 @@ $(document).ready(function(){
 
 
         </div>
-    </div>
-    <div class="select-box">
-        <h1>Selectionner les produits achetés</h1>
-        <select class="selectpicker" multiple="" name="ProduitId" id="ProduitId"   data-live-search="true" data-live-search-placeholder="Search" tabindex="-98">
-            <option th:each="produit:${listProduit}"
-                    th:value="${produit.id}"
-                    th:text="${produit.libelle }" ></option>
-        </select>
-    </div>
-
-    <select class="selectpicker" data-size="5">
-        <option th:each="produit:${listProduit}"
-                th:value="${produit.id}"
-                th:text="${produit.libelle }" ></option>
-    </select>
+    </div> -->
 
 
-    <div class="pen-footer"><a href="/category/afficher" ><i class="material-icons">arrow_backward</i>Aller à Categories</a></div>
-</div>
+ <div class="container py-5">
+     <header class="text-center text-black">
+         <h1 class="display-4">Liste des Produits</h1>
+
+     </header>
+     <div class="row py-5">
+         <div class="col-lg-10 mx-auto">
+             <div class="card rounded shadow border-0">
+                 <div class="card-body p-5 bg-white rounded">
+                     <div class="table-responsive">
+                         <table id="example" style="width:100%" class="table table-striped table-bordered">
+                             <thead>
+                             <tr>
+                                 <th scope="col">#</th>
+                                 <th scope="col">Categories</th>
+                                 <th scope="col">Produits</th>
+                                 <th scope="col">Prix</th>
+                                 <th scope="col">Quantité du stock</th>
+                                 <th scope="col">Quantité seuil</th>
+                                 <th scope="col">Date de creation</th>
+                                 <th scope="col">Actions</th>
+
+                             </tr>
+                             </thead>
+                             <tbody>
+                             <tr  th:each = "produit:${listProduit}">
+                                 <td  scope="row" th:text = "${produit.id}"></td>
+                                 <td  scope="row" th:text = "${produit.category.designation}"></td>
+                                 <td scope="row" th:text = "${produit.libelle}"></td>
+                                 <td  scope="row" th:text = "${produit.prix}"></td>
+                                 <td  scope="row" th:text = "${produit.qteStock}"></td>
+                                 <td  scope="row" th:text = "${produit.qteSeuil}"></td>
+                                 <td  scope="row" th:text = "${produit.createdAt}"></td>
+
+
+                                 <td>
+                                     <a  th:href="@{/produit/edit/{id}(id=${produit.id})}"   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                     <a th:href="@{/produit/delete/{id}(id=${produit.id})}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                     <a  th:href="@{/approvisionnement/create/{id}(id=${produit.id})}"   class="create" title="Create" data-toggle="tooltip"><i class="material-icons">&#xe854; </i></a>
+                                 </td>
+                             </tr>
+
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+
+
+    <div class="pen-footer"><a href="/vente/show" ><i class="material-icons">arrow_backward</i>Aller à Categories</a></div>
+
+
 </body>
 </html>

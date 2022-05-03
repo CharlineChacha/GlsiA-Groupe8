@@ -19,7 +19,7 @@ public class ProduitService {
         produitRepository.save(produit);
     }
 
-    public Long nbreProduit(Produit produit){return produitRepository.count();}
+    public Long nbreProduit(){return produitRepository.count();}
 
     //Afficher les produits
     public List<Produit> showAllProduit()
@@ -28,7 +28,21 @@ public class ProduitService {
     }
 
     //selectionner un seul produit
-    public Produit selectedProduit(int id)
+    public Produit get(int id)
+    {
+        Optional<Produit> optional = produitRepository.findById(id);
+        Produit produit = null;
+        if(optional.isPresent())
+        {
+            produit = optional.get();
+        }else
+        {
+            throw new RuntimeException("id introuvable");
+        }
+        return  produit;
+    }
+
+    public Produit select (int id)
     {
         Optional<Produit> optional = produitRepository.findById(id);
         Produit produit = null;
@@ -44,9 +58,17 @@ public class ProduitService {
 
     //supprimer un produit
     public void deleteProduit(int id){
-        if (selectedProduit(id) != null) {
+        if (get(id) != null) {
             produitRepository.deleteById(id);
         }
     }
+
+
+
+
+    ///   public void updateProduitAfterApprovisionnement(int id, int quantite)
+  //  {
+ //       produitRepository.updateProduitAfterApprovisionnement(id, quantite);
+   // }
 
 }

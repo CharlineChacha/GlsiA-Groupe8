@@ -26,13 +26,7 @@ public class ProduitController {
         return "produit/showProduit";
     }
 
-    @GetMapping()
-            public String nbreProduit (Model model, Produit produit)
-    {
-        model.addAttribute("nbreProduit", produitService.nbreProduit(produit));
-           return "$nbre";
 
-    }
 
     @GetMapping("/create")
     public String AfficherFormulaire(Model model)
@@ -59,7 +53,7 @@ public class ProduitController {
     public String formEditProduit(@PathVariable("id") int id, Model model)
     {
         //produit.setCreatedAt(LocalDateTime.now());
-        model.addAttribute("unProduit", produitService.selectedProduit(id));
+        model.addAttribute("unProduit", produitService.get(id));
         model.addAttribute("ListCategory", categoryService.showAllCategory());
         return "produit/formEditProduit";
     }
